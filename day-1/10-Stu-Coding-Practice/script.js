@@ -8,7 +8,7 @@ var sum = player1 + player2 + player3;
 console.log(sum + " $");
 
 var limit = 40000000;
-var taxrate = 0.18;
+var taxrate = 0.18; //18%
 var excees = sum - limit;
 var luxuryTax = excees * taxrate;
 

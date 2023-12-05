@@ -1,8 +1,8 @@
 var a = "50";
 var b = 50;
 var c = 100;
-var d = c % b;
-var e = c / 2;
+var d = c % b; //0
+var e = c / 2; //50
 
 var expression1 = b === e;
 var expression2 = e < d;
