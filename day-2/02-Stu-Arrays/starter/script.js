@@ -15,7 +15,7 @@ var originalName = studentName[indexToReplace];
 
 // replaced one student with another
 studentName[0] = "Student43";
-console.log("student1 is replace with " + studentName[0]);
+console.log("student1 is replaced with " + studentName[0]);
 
 // Check if the element has been replaced
 if (originalName !== studentName[indexToReplace]) {
