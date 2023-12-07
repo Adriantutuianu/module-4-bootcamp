@@ -4,3 +4,7 @@ console.log(choices);
 
 // 2. Prompt user to enter "r," "p," or "s".
 var whatChoice = prompt("Please choose between r, p, or s");
+
+// 3. Computer chooses a **random** value in a list of "r," "p," or "s."
+var randomChoice = choices[Math.floor(Math.random() * choices.length)];
+console.log(randomChoice);
