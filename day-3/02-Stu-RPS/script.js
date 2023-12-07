@@ -1,31 +1,41 @@
 // 1. Initialize `choices` array: r, p, s. representing rock, paper, or scissors.
-var choices = ["r", "p", "s"];
-console.log(choices);
-
-// 2. Prompt user to enter "r," "p," or "s".
-var whatChoice = prompt("Please choose between r, p, or s");
-
-// 3. Computer chooses a **random** value in a list of "r," "p," or "s."
-var randomChoice = choices[Math.floor(Math.random() * choices.length)];
-console.log(randomChoice);
+var computerChoices = ["r", "p", "s"];
+// console.log(choices);
 
 //4.We determine if the user wins or not.
 var wins = 0;
 var losses = 0;
 var ties = 0;
 
-if (whatChoice === "r" && randomChoice === "s") {
-  alert("You win!");
-} else if (whatChoice === "r" && randomChoice === "p") {
-  alert("You lost!");
-} else if (whatChoice === "s" && randomChoice === "r") {
-  alert("You lost!");
-} else if (whatChoice === "s" && randomChoice === "p") {
-  alert("You win!");
-} else if (whatChoice === "p" && randomChoice === "r") {
-  alert("You win!");
-} else if (whatChoice === "p" && randomChoice === "s") {
-  alert("You lost!");
-} else if (whatChoice === randomChoice) {
-  alert("It's a tie!");
+for (var i = 0; i < 10; i++) {
+  //randomly chooses a choice from the options array. This is the computer guess.
+  var computerGuess =
+    computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+  //collect the user s response and convert to lower case
+  var userGuess = prompt("Enter r, p, or s!");
+  userGuess = userGuess.toLowerCase();
+
+  //only run game logic if user chose a valid option
+  if (userGuess === "r" || userGuess === "p" || userGuess === "s") {
+    alert("The computer chose " + computerGuess);
+
+    // win/lose condition
+    if (userGuess === computerGuess) {
+      ties++;
+      alert("You've tied " + ties + "times.");
+    } else if (
+      (userGuess === "r" && computerGuess === "s") ||
+      (userGuess === "s" && computerGuess === "p") ||
+      (userGuess === "p" && computerGuess === "r")
+    ) {
+      wins++;
+      alert("You've won " + wins + " times!");
+    }
+  }
 }
+
+//when game is over alert the totals to the users.
+alert(
+  "Total wins: " + wins + "\nTotal ties: " + ties + "\nTotal losses: " + losses
+);
