@@ -13,3 +13,19 @@ console.log(randomChoice);
 var wins = 0;
 var losses = 0;
 var ties = 0;
+
+if (whatChoice === "r" && randomChoice === "s") {
+  alert("You win!");
+} else if (whatChoice === "r" && randomChoice === "p") {
+  alert("You lost!");
+} else if (whatChoice === "s" && randomChoice === "r") {
+  alert("You lost!");
+} else if (whatChoice === "s" && randomChoice === "p") {
+  alert("You win!");
+} else if (whatChoice === "p" && randomChoice === "r") {
+  alert("You win!");
+} else if (whatChoice === "p" && randomChoice === "s") {
+  alert("You lost!");
+} else if (whatChoice === randomChoice) {
+  alert("It's a tie!");
+}
