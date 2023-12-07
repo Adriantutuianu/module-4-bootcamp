@@ -8,3 +8,8 @@ var whatChoice = prompt("Please choose between r, p, or s");
 // 3. Computer chooses a **random** value in a list of "r," "p," or "s."
 var randomChoice = choices[Math.floor(Math.random() * choices.length)];
 console.log(randomChoice);
+
+//4.We determine if the user wins or not.
+var wins = 0;
+var losses = 0;
+var ties = 0;
